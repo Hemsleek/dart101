@@ -1,38 +1,17 @@
 void main() {
-  //List - Array in js
-  List<String> names = ['muba', 'shir'];
-  print(names[0]);
+  //positional function
+  print(sum(10, 12));
 
-  //set - unique unordered list
+  //positional function with optional params
+  print(sum(10));
 
-  Set halogens = {'fluorine', 'chlorine', 'chlorine'};
+  //un-positional function
+  print(sum2(num1: 10, num2: 20));
 
-  for (var x in halogens) {
-    print(x);
-  }
-  //for empty set
-  var emptySet = <String>{};
-  //or
-  Set<String> emptySet2 = {};
-
-  print(emptySet.runtimeType);
-  print(emptySet2.runtimeType);
-
-  //Maps - object in js
-
-  Map employee = {
-    "name": 'mubashir',
-    "lastName": 'Asiyanbi',
-    "phone": '0918281212'
-  };
-  print(employee['name']);
-
-  var technicians = Map();
-
-  technicians['mubashir'] = {
-    'id': '121921217621',
-    'fullName': 'Asiyanbi Mubashir'
-  };
-
-  print(technicians);
+  //un-positional function with default params
+  print(sum2(num1: 10));
 }
+
+dynamic sum(var num1, [var num2]) => num1 + (num2 ?? 0);
+
+dynamic sum2({var num1, var num2 = 10}) => num1 + num2;
