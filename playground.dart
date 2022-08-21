@@ -1,29 +1,21 @@
 import "dart:io";
 
+class Num {
+  int num = 10;
+}
+
 main() {
-//boolean type
-  bool isTrusted = true;
-  var canTrust = false;
-  print(isTrusted);
+  //null-aware operation(?.) (??) (??=)
+  var n;
+  int number;
+  number = n?.num ?? 0;
+  print(number);
 
-  // dynamic type
-  dynamic weakVariable = 100;
-  print('before : $weakVariable');
-  weakVariable = 'this is a string';
-  print('after: $weakVariable');
+  var m = Num();
+  int value;
+  value = m.num;
+  print(value);
 
-  //type conversion
-
-  var oneConvertion = int.parse('90');
-  print(oneConvertion);
-  assert(oneConvertion == 90);
-
-  //converting  int, double to change int
-  double randomValue = 3.142;
-  print(randomValue.toStringAsFixed(1));
-  print(randomValue.toString());
-
-  //runtime type and constants
-  const testValue = 'This is a normal string test';
-  print(testValue.runtimeType);
+  int? defaultNullText;
+  print(defaultNullText ??= 100);
 }
