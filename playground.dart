@@ -1,11 +1,6 @@
 import "dart:io";
 
 main() {
-  //input and output
-  stdout.writeln('What is your Name?');
-  String? fullname = stdin.readLineSync();
-  print('my name is $fullname');
-
 //boolean type
   bool isTrusted = true;
   var canTrust = false;
@@ -22,4 +17,13 @@ main() {
   var oneConvertion = int.parse('90');
   print(oneConvertion);
   assert(oneConvertion == 90);
+
+  //converting  int, double to change int
+  double randomValue = 3.142;
+  print(randomValue.toStringAsFixed(1));
+  print(randomValue.toString());
+
+  //runtime type and constants
+  const testValue = 'This is a normal string test';
+  print(testValue.runtimeType);
 }
