@@ -1,21 +1,24 @@
-// getters and setters
+main() {
+  int? valueVerified;
 
-class Rectangle {
-  num left, top, width, height;
-
-  Rectangle(this.left, this.width, this.top, this.height);
-
-  num get right => left + width;
-
-  set right(num value) => left = value - width;
-  num get bottom => top + height;
-  set bottom(num value) => top = value - height;
+  try {
+    valueVerified = mustBeGreaterThanZero(0);
+    print(valueVerified);
+  } catch (e) {
+    print(e);
+  } finally {
+    if (valueVerified == null) {
+      print("Value is not accepted");
+    } else {
+      print("value Verified: $valueVerified");
+    }
+  }
 }
 
-main() {
-  var shape1 = Rectangle(3, 4, 6, 10);
-
-  print(shape1.right);
-  shape1.right = 13;
-  print(shape1.right);
+int mustBeGreaterThanZero(int value) {
+  //exception handling
+  if (value <= 0) {
+    throw Exception('Value($value) Must be greater Than Zero');
+  }
+  return value;
 }
