@@ -1,26 +1,14 @@
-class Person {
-  String? name;
-  int? age;
+class X {
+  final name;
+  static const age = 10;
 
-  //default constructor
-  Person(this.name, [this.age = 10]);
-
-  //named constructor
-  Person.guest() {
-    name = 'Asiyanbi';
-    age = 40;
-  }
-
-  void showOutput() {
-    print(name);
-    print(age);
-  }
+  X(this.name);
 }
 
 void main() {
-  Person person1 = Person('jagunlabi', 20);
-  person1.showOutput();
-
-  var person2 = Person.guest();
-  person2.showOutput();
+  X x = X('jack');
+  print(x.name);
+  print(X.age);
+  var y = X('jill');
+  print(y.name);
 }
