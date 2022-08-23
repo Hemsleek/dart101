@@ -1,14 +1,32 @@
-class X {
-  final name;
-  static const age = 10;
+class Vehicle {
+  String? model;
+  int? year;
 
-  X(this.name);
+  Vehicle(this.model, this.year) {
+    print(this.model);
+    print(this.year);
+  }
+
+  void showOutput() {
+    print(model);
+    print(year);
+  }
+}
+
+//inheritance
+class Car extends Vehicle {
+  double? price;
+
+  Car(String model, int year, this.price) : super(model, year);
+
+  @override
+  void showOutput() {
+    super.showOutput();
+    print(this.price);
+  }
 }
 
 void main() {
-  X x = X('jack');
-  print(x.name);
-  print(X.age);
-  var y = X('jill');
-  print(y.name);
+  Car car1 = Car('Lexus', 1996, 100);
+  car1.showOutput();
 }
