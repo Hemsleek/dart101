@@ -1,17 +1,15 @@
 void main() {
-  //positional function
-  print(sum(10, 12));
-
-  //positional function with optional params
-  print(sum(10));
-
-  //un-positional function
-  print(sum2(num1: 10, num2: 20));
-
-  //un-positional function with default params
-  print(sum2(num1: 10));
+  Person person1 = Person();
+  person1.name = 'jagunlabi';
+  print(person1.name);
 }
 
-dynamic sum(var num1, [var num2]) => num1 + (num2 ?? 0);
+class Person {
+  String? name;
+  int? age;
 
-dynamic sum2({var num1, var num2 = 10}) => num1 + num2;
+  void showOutput() {
+    print(age);
+    print(name);
+  }
+}
