@@ -1,32 +1,21 @@
-class Vehicle {
-  String? model;
-  int? year;
+// getters and setters
 
-  Vehicle(this.model, this.year) {
-    print(this.model);
-    print(this.year);
-  }
+class Rectangle {
+  num left, top, width, height;
 
-  void showOutput() {
-    print(model);
-    print(year);
-  }
+  Rectangle(this.left, this.width, this.top, this.height);
+
+  num get right => left + width;
+
+  set right(num value) => left = value - width;
+  num get bottom => top + height;
+  set bottom(num value) => top = value - height;
 }
 
-//inheritance
-class Car extends Vehicle {
-  double? price;
+main() {
+  var shape1 = Rectangle(3, 4, 6, 10);
 
-  Car(String model, int year, this.price) : super(model, year);
-
-  @override
-  void showOutput() {
-    super.showOutput();
-    print(this.price);
-  }
-}
-
-void main() {
-  Car car1 = Car('Lexus', 1996, 100);
-  car1.showOutput();
+  print(shape1.right);
+  shape1.right = 13;
+  print(shape1.right);
 }
