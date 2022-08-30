@@ -1,37 +1,13 @@
-main() {
-  final cat1 = Cat('maya');
-  final cat2 = Cat('maya');
+enum AnimalType { cat, dog, chicken }
 
-  if (cat1 == cat2)
-    print('cat is same');
-  else {
-    print('cat is mot same');
+main() {
+  final sample = AnimalType.chicken;
+
+  if (sample == AnimalType.cat) {
+    print('it is a cat');
+  } else if (sample == AnimalType.chicken) {
+    print('it is not a cat');
   }
 }
 
 //abstract
-class LivingThings {
-  final String name;
-//normal constructor
-  LivingThings(this.name);
-
-  void breath() {
-    print('is breathing');
-  }
-
-  void walking() {
-    print('is walking');
-  }
-}
-
-class Cat {
-  final String name;
-
-  Cat(this.name);
-
-  @override
-  bool operator ==(covariant Cat others) => others.name == name;
-
-  @override
-  int get hashCode => name.hashCode;
-}
