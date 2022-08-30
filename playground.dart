@@ -1,13 +1,34 @@
-enum AnimalType { cat, dog, chicken }
+class Cat {
+  final String name;
 
-main() {
-  final AnimalType sample = AnimalType.cat;
+  Cat(this.name);
+}
 
-  if (sample == AnimalType.cat) {
-    print('it is a cat');
-  } else if (sample == AnimalType.chicken) {
-    print('it is a chicken');
+extension Run on Cat {
+  run() {
+    print('cat $name is running');
   }
 }
 
-//abstract
+class Person {
+  final String firstName, lastName;
+
+  Person(this.firstName, this.lastName);
+}
+
+extension FullName on Person {
+  String get fullName => '$firstName $lastName';
+}
+
+main() {
+  final meow = Cat('fluffers');
+  print(meow.name);
+  print(meow.run());
+
+  final Person chad = Person('Chad', 'lugard');
+  print(chad.fullName);
+}
+
+//extensions
+
+
