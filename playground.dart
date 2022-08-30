@@ -1,24 +1,27 @@
 main() {
-  int? valueVerified;
+  final things = LivingThings('groot');
+  things.breath();
+  print(things.name);
 
-  try {
-    valueVerified = mustBeGreaterThanZero(0);
-    print(valueVerified);
-  } catch (e) {
-    print(e);
-  } finally {
-    if (valueVerified == null) {
-      print("Value is not accepted");
-    } else {
-      print("value Verified: $valueVerified");
-    }
-  }
+  final man = LivingThings.man();
+
+  print(man.name);
 }
 
-int mustBeGreaterThanZero(int value) {
-  //exception handling
-  if (value <= 0) {
-    throw Exception('Value($value) Must be greater Than Zero');
+class LivingThings {
+  final String name;
+//normal constructor
+  LivingThings(this.name);
+
+//factory constructor
+  factory LivingThings.man() {
+    return LivingThings('man');
   }
-  return value;
+  void breath() {
+    print('is breathing');
+  }
+
+  void walking() {
+    print('is walking');
+  }
 }
