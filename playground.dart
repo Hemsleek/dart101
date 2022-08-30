@@ -1,34 +1,15 @@
-class Cat {
-  final String name;
+//Future
 
-  Cat(this.name);
+int multipiedByTwo(int a) => a * 2;
+
+Future<int> heavyMultiplyByTwo(int a) {
+  return Future.delayed(Duration(seconds: 3), () => a * 3);
 }
 
-extension Run on Cat {
-  run() {
-    print('cat $name is running');
-  }
-}
-
-class Person {
-  final String firstName, lastName;
-
-  Person(this.firstName, this.lastName);
-}
-
-extension FullName on Person {
-  String get fullName => '$firstName $lastName';
-}
-
-main() {
-  final meow = Cat('fluffers');
-  print(meow.name);
-  print(meow.run());
-
-  final Person chad = Person('Chad', 'lugard');
-  print(chad.fullName);
-}
-
+main() async {
 //extensions
-
-
+//extensions
+  print(multipiedByTwo(5));
+  print(await heavyMultiplyByTwo(5));
+  ;
+}
