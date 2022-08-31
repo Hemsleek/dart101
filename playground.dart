@@ -1,15 +1,11 @@
-//Future
-
-int multipiedByTwo(int a) => a * 2;
-
-Future<int> heavyMultiplyByTwo(int a) {
-  return Future.delayed(Duration(seconds: 3), () => a * 3);
+//streams
+Stream<String> getName() {
+  return Stream.periodic(const Duration(seconds: 1), (value) => 'Foo');
 }
 
 main() async {
-//extensions
-//extensions
-  print(multipiedByTwo(5));
-  print(await heavyMultiplyByTwo(5));
-  ;
+  await for (String value in getName()) {
+    print(value);
+  }
+  print('stream finished now ');
 }
