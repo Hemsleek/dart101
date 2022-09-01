@@ -7,6 +7,6 @@ class Pair<A, B> {
 }
 
 main() {
-  final name = Pair('hi', 2);
-  print(name.value2);
+  final names = Pair('foo', 12);
+  print(names.value1);
 }
